@@ -76,4 +76,24 @@ console.log(myArray.addTwo()); // Output: [3, 4, 5]
 ╚════════════════╩══════════════════════════════╩══════════════════════╝
 */
 
+/**
+ * ╭────────────────────────────────────────────────────────────────╮
+ * │              Constructor  vs  Prototype (JavaScript)           │
+ * ├─────────────────┬────────────────────────┬─────────────────────┤
+ * │ Aspect          │ In Constructor         │ On Prototype        │
+ * ├─────────────────┼────────────────────────┼─────────────────────┤
+ * │ Memory          │ New copy per instance  │ One shared copy     │
+ * │                 │ (function recreated)   │ (memory efficient)  │
+ * ├─────────────────┼────────────────────────┼─────────────────────┤
+ * │ Lookup          │ Direct property access │ Prototype chain     │
+ * │                 │ (slightly faster)      │ (almost same speed) │
+ * ├─────────────────┼────────────────────────┼─────────────────────┤
+ * │ Override        │ Default per instance   │ Can override per    │
+ * │                 │                        │ instance if needed  │
+ * ├─────────────────┼────────────────────────┼─────────────────────┤
+ * │ Scaling         │ Memory grows with      │ Memory stays        │
+ * │                 │ number of objects      │ constant for methods│
+ * ╰─────────────────┴────────────────────────┴─────────────────────╯
+ */
+
 // Use prototype for any method that doesn't need access to private/local variables. It keeps one copy in memory regardless of how many instances you create.
